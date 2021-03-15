@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>les livres</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/maintow.css') }}">
+</head>
+<style>
+    .bimage{
+      background-image:url({{ url_for('static', filename='img/img4.jpg') }});
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .ok{
+        background-image:url({{ url_for('static', filename='img/img3.jpg') }});
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cove
+    }
+</style>
+
+<body class="bimage">
+    <div id="header" class="ok">
+        <div id="topbar">
+            <h2 style="margin-right:20px;margin-left:10px"><span style="color:yellow">P</span>lat<span style="color:red">L</span>ivres</h2>
+            <div type="text">
+                <form id="searchbar" action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+                <input  id="searchbartext" type="text" name="book" value={{ book_value }}/>
+                <button id="searchbarbutton" type="submit" >
+                    <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                </button>
+                </form>
+            </div>
+        </div>
+        <div id="optionsbar">
+            <ul id="optionsmenu1">
+                <li id="optionsmenuactive">All</li>
+            </ul>
+        </div>
+    </div>
+    <div id="searchresultsarea">
+        <p id="searchresultsnumber"> </p>
+
+
+        <div class="searchresult">
+            <!--Resultat here-->
+            AUCUNE LIVRE
+        </div>
+
+</body>
+</html>
+
